@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">NG Calculater</h1>
+            <div class="cal-container">
+                <div class="card">
+                    <div class="card-body">
+                        <form #calForm="ngForm">
+                            <!-- First Nmber -->
+                            <div class="form-group">
+                                <label for="num1">First Number</label>
+                                <input type="number" class="form-control" aria-describedby="number1" placeholder="Enter First Number" name="num1" [(ngModel)]="num1" required>
+                            </div>
+                            <!-- Second Number -->
+                            <div class="form-group">
+                                <label for="num2">Second Number</label>
+                                <input type="number" class="form-control" aria-describedby="number2" placeholder="Enter Second Number" name="num2" [(ngModel)]="num2" required>
+                            </div>
+                            <!-- Operations Buttons -->
+                            <div class="btns-holder">
+                                <button type="button" class="btn btn-primary" (click)="add(num1, num2)" [disabled]="!calForm.valid">Add (+)</button>
+                                <button type="button" class="btn btn-warning" (click)="sub(num1, num2)" [disabled]="!calForm.valid">Sub (-)</button>
+                                <button type="button" class="btn btn-secondary" (click)="mult(num1, num2)" [disabled]="!calForm.valid">Mult (*)</button>
+                                <button type="button" class="btn btn-success" (click)="div(num1, num2)" [disabled]="!calForm.valid">Div (/)</button>
+                            </div>
+                            <button type="reset" class="btn btn-danger" [disabled]="!calForm.valid">Delete</button>
+                        </form>
+                        <div class="log" *ngIf="logs.length">
+                            <!-- Log History -->
+                            <h5>Log History:</h5>
+                            <div class="log-holder">
+                                <div *ngFor="let logItem of logs | filter : searchLog">
+                                    <span>{{logItem}}</span>
+                                </div>
+                            </div>
+                            <!-- Search In logs -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" aria-describedby="Search Log" placeholder="Search in log history" name="searchLog" [(ngModel)]="searchLog">
+                                <button type="button" class="btn btn-dark" (click)="clearLog()">Clear Log</button>
+                            </div>
+                            <h6 *ngIf="(logs | filter : searchLog).length === 0">No matching log</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

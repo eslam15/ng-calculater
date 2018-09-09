@@ -1,0 +1,60 @@
+.container {
+    h1 {
+        margin-bottom: 20px;
+    }
+    .cal-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card {
+            .card-body {
+                .form-group {
+                    display: inline-block;
+                }
+                .btns-holder {
+                    display: flex;
+                    justify-content: space-between;
+                    .btn {
+                        width: 80px;
+                    }
+                }
+                .btn-danger {
+                    width: 190px;
+                    display: block;
+                    margin: auto;
+                    margin-top: 15px;
+                }
+                .log {
+                    padding-top: 10px;
+                    h5 {
+                        margin-top: 10px;
+                        margin-bottom: 5px;
+                    }
+                    .log-holder {
+                        padding: 10px 0;
+                        max-height: 200px;
+                        overflow-y: auto;
+                        span {
+                            font-size: 18px;
+                            color: #0068a5
+                        }
+                    }
+                    .form-group {
+                        display: flex;
+                        margin-top: 10px;
+                        margin-bottom: 0;
+                        .btn {
+                            margin-top: 0;
+                            margin-left: 5px;
+                        }
+                    }
+                    h6 {
+                        margin-top: 5px;
+                        margin-bottom: 0;
+                        color: #e20000;
+                    }
+                }
+            }
+        }
+    }
+}
