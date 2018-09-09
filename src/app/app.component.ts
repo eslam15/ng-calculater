@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
-import { RepeatPipe } from 'ng-pipes';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [RepeatPipe]
 })
 export class AppComponent {
 
   constructor() {
   }
 
+  title = "NG Calculater"
   logs: any = [];
   sum = Number("");
 
